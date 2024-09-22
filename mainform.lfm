@@ -1,0 +1,80 @@
+object Form1: TForm1
+  Left = 595
+  Height = 652
+  Top = 135
+  Width = 1208
+  Caption = 'Look'
+  ClientHeight = 652
+  ClientWidth = 1208
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  LCLVersion = '3.0.0.2'
+  object Memo1: TMemo
+    Left = 240
+    Height = 568
+    Top = 40
+    Width = 920
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = 'Courier New'
+    Font.Pitch = fpFixed
+    Font.Quality = fqCleartype
+    Lines.Strings = (
+      'Memo1'
+    )
+    ParentFont = False
+    ScrollBars = ssAutoBoth
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 40
+    Height = 25
+    Top = 194
+    Width = 156
+    Caption = 'Straight Text'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 42
+    Height = 25
+    Top = 223
+    Width = 152
+    Caption = 'Hex Dump'
+    TabOrder = 2
+    OnClick = Button2Click
+  end
+  object MainMenu1: TMainMenu
+    Left = 36
+    Top = 41
+    object MenuItem1: TMenuItem
+      Caption = 'File'
+      object MenuItem5: TMenuItem
+        Caption = '&Open'
+        OnClick = MenuItem5Click
+      end
+      object Separator1: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem6: TMenuItem
+        Caption = 'E&xit'
+        ShortCut = 32883
+        OnClick = MenuItem6Click
+      end
+    end
+    object MenuItem2: TMenuItem
+      Caption = '&View'
+    end
+    object MenuItem3: TMenuItem
+      Caption = '&Help'
+      object MenuItem4: TMenuItem
+        Caption = '&About'
+        ShortCut = 112
+      end
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 132
+    Top = 41
+  end
+end
