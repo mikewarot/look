@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, StdCtrls,
-  ComCtrls, ExtCtrls, ExtendedTabControls;
+  ComCtrls, ExtCtrls;
 
 type
 
@@ -110,8 +110,11 @@ var
   i : Int64;
   s : string;
   c : char;
+  Buffer : TStringList;
 begin
   Memo1.Clear;
+  Buffer := TStringList.Create;
+  Buffer.Clear;
   Offset := 0;
   repeat
     s := Offset.ToHexString(8)+': ';
@@ -139,9 +142,12 @@ begin
       s := s + c;
     end;
 
-    Memo1.Append(s);
+    Buffer.Append(s);
     inc(offset,16);
   until offset >= Length(BinaryData);
+  Memo1.Lines.Text:= Buffer.Text;
+  Buffer.Clear;
+  Buffer.Destroy;
 
 end;
 
